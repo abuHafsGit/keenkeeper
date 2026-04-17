@@ -1,4 +1,3 @@
-"use client";
 import { createContext, useContext, useEffect, useState } from "react";
 const AppContext = createContext();
 
@@ -9,6 +8,7 @@ const AppContextProvider = ({ children }) => {
     const [text, setText] = useState([])
     const [video, setVideo] = useState([])
     const [isLoding, setIsLoding] = useState(true)
+
 
     useEffect(() => {
         setTimeout(() => {
@@ -21,6 +21,7 @@ const AppContextProvider = ({ children }) => {
             fetchUsers()
         }, 1000);
     }, [])
+
     const data = {
         users, setUsers, timeLinens, setTimeLinens, call, setCall, text, setText, video, setVideo, isLoding
     };

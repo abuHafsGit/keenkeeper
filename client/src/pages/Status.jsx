@@ -3,6 +3,7 @@ import { useAppContext } from "../context/AppContext";
 import { PieChart, Tooltip, Legend, Pie } from 'recharts'
 const StatusPage = () => {
     const { call, text, video, } = useAppContext()
+    console.log(call, text, video)
     const data = [
         { name: 'call', value: call.length, fill: '#7E35E1' },
         { name: 'text', value: text.length, fill: '#244D3F' },

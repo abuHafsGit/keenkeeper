@@ -1,7 +1,8 @@
 
+import { ChartAreaIcon, Handshake, Home, House, MessageCircleMore, Video, VideoIcon, Wallet } from 'lucide-react';
 import React from 'react';
 
-const TimeLineCard = ({ timeLinen }) => {
+const TimeLineCard = ({ timeLinen, props }) => {
     const year = new Date().getFullYear()
     const day = new Date().getDay()
     const month = new Date().getMonth()
@@ -9,11 +10,13 @@ const TimeLineCard = ({ timeLinen }) => {
     return (
         <div className=' max-w-7xl mx-auto bg-white border border-gray-200 rounded-md shadow flex gap-2  items-center py-3 lg:px-10  px-4 '>
             <div>
-                home icon
+                {props == 'Text' ? <MessageCircleMore /> : ""}
+                {props == 'Meetup' ? <Handshake /> : ""}
+                {props == 'Video' ? <VideoIcon /> : ""}
             </div>
             <div className=' flex flex-col'>
                 <div className=' flex gap-1'>
-                    <p className=' font-bold'>meetup</p>
+                    <p className=' font-bold'>{props}</p>
                     <p className=' text-gray-400'>{timeLinen.name}</p>
                 </div>
                 <p className=' text-gray-400'>{fullDate}</p>

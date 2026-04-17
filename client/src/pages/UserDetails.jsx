@@ -3,7 +3,7 @@ import DetailsCard from '../components/DetailsCard';
 import { useLoaderData, useParams } from 'react-router';
 import { useAppContext } from '../context/AppContext';
 import toast, { Toaster } from 'react-hot-toast';
-import { Archive, ClipboardType, Delete, PhoneCall, SnowflakeIcon, Video } from 'lucide-react';
+import { Archive, Bell, ClipboardType, Delete, MessageCircleMore, PhoneCall, SnowflakeIcon, Video } from 'lucide-react';
 
 
 const UserDetails = () => {
@@ -14,7 +14,7 @@ const UserDetails = () => {
     const { setTimeLinens, timeLinens, call, setCall, text, setText, video, setVideo } = useAppContext()
 
     const handleCall = () => {
-        setCall([...call, expectedUser + 'call'])
+        setCall([...call, expectedUser])
         setTimeLinens([...timeLinens, ...call,])
         toast.success('called')
 
@@ -41,7 +41,7 @@ const UserDetails = () => {
                     </div>
                     <div className=' bg-white py-3 flex justify-center items-center gap-3 border border-gray-200 shadow'>
                         {/* <House /> */}
-                        <p className=' flex gap-2'><SnowflakeIcon /> Snooze 2 weeks</p>
+                        <p className=' flex gap-2'><Bell /> Snooze 2 weeks</p>
                     </div>
                     <div className=' bg-white py-3 flex justify-center items-center gap-3 border border-gray-200 shadow'>
                         {/* <House /> */}
@@ -83,7 +83,7 @@ const UserDetails = () => {
                                 <div>call</div>
                             </div>
                             <div onClick={handleText} className=' bg-[#F8FAFC] p-10 border border-gray-300 rounded-md shadow flex flex-col justify-center items-center cursor-pointer'>
-                                <div><ClipboardType /></div>
+                                <div><MessageCircleMore /></div>
                                 <div>text</div>
                             </div>
                             <div onClick={handleVideo} className=' bg-[#F8FAFC] p-10 border border-gray-300 rounded-md shadow flex flex-col justify-center items-center  cursor-pointer'>
