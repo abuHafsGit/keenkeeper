@@ -11,23 +11,20 @@ const UserDetails = () => {
     const users = useLoaderData()
     const expectedUser = users.find((user) => user.id == id)
     console.log(id, users, expectedUser)
-    const { setTimeLinens, timeLinens, call, setCall, text, setText, video, setVideo } = useAppContext()
+    const { timeLinens, call, setCall, text, setText, video, setVideo } = useAppContext()
 
     const handleCall = () => {
         setCall([...call, expectedUser])
-        setTimeLinens([...timeLinens, ...call,])
-        toast.success('called')
+        toast.success(`Call with ${expectedUser.name}`)
 
     }
     const handleText = () => {
         setText([...text, expectedUser])
-        setTimeLinens([...timeLinens, ...text])
-        toast.success('text')
+        toast.success(`Text with ${expectedUser.name}`)
     }
     const handleVideo = () => {
         setVideo([...video, expectedUser])
-        setTimeLinens([...timeLinens, ...video])
-        toast.success('video')
+        toast.success(`Video with ${expectedUser.name}`)
     }
     console.log('timeLinens', timeLinens)
     return (

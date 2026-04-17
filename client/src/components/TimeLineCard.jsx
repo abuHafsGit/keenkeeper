@@ -17,7 +17,7 @@ const TimeLineCard = ({ timeLinen, props }) => {
             <div className=' flex flex-col'>
                 <div className=' flex gap-1'>
                     <p className=' font-bold'>{props}</p>
-                    <p className=' text-gray-400'>{timeLinen.name}</p>
+                    <p className=' text-gray-400'>With {timeLinen.name}</p>
                 </div>
                 <p className=' text-gray-400'>{fullDate}</p>
             </div>

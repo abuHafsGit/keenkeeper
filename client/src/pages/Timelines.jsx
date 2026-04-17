@@ -15,31 +15,25 @@ const TimeLinePage = () => {
                 <option>Video</option>
                 <option>MeetUp</option>
             </select>
-            <div className=" flex flex-col gap-3">
-                {timeLinens.map((timeLinen) => (
-                    <div>
-                        <TimeLineCard key={timeLinen.id} timeLinen={timeLinen} />
-                    </div>
-                ))}
-            </div>
+
             <div className=" flex flex-col gap-3">
                 {text.map((c) => (
-                    <div>
-                        <TimeLineCard key={c.id} timeLinen={c} props="Meetup" />
-                    </div>
-                ))}
-            </div>
-            <div className=" flex flex-col gap-3">
-                {video.map((c) => (
                     <div>
                         <TimeLineCard key={c.id} timeLinen={c} props="Text" />
                     </div>
                 ))}
             </div>
             <div className=" flex flex-col gap-3">
-                {call.map((c) => (
+                {video.map((c) => (
                     <div>
                         <TimeLineCard key={c.id} timeLinen={c} props="Video" />
+                    </div>
+                ))}
+            </div>
+            <div className=" flex flex-col gap-3">
+                {call.map((c) => (
+                    <div>
+                        <TimeLineCard key={c.id} timeLinen={c} props="Meetup" />
                     </div>
                 ))}
             </div>
