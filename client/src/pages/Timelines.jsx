@@ -9,7 +9,12 @@ const TimeLinePage = () => {
     return (
         <div className='max-w-7xl mx-auto space-y-4 my-10 px-4'>
             <h1>Timeline</h1>
-            <button className=' btn'>Filter timeline</button>
+            <select defaultValue="Pick a color" className="select">
+                <option disabled={true}>Filter Timeline</option>
+                <option>Text</option>
+                <option>Video</option>
+                <option>MeetUp</option>
+            </select>
             <div className=" flex flex-col gap-3">
                 {timeLinens.map((timeLinen) => (
                     <div>
